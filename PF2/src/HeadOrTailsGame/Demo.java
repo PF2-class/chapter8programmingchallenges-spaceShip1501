@@ -6,22 +6,21 @@ public class Demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Player player1= new Player("thuyen");
-		Player player2= new Player("duyen");
-		Scanner key1= new Scanner (System.in);
-		Scanner key2= new Scanner (System.in);
-		player1.Go("head");
-		
-		do {
-				System.out.println("Player 1: Enter your guess");
-				String guess1= key1.nextLine();
-				player1.Go(guess1);
-				//System.out.println("Your code");
-				System.out.println("Player 2: Enter your guess");
-				String guess2= key2.nextLine();
-				player2.Go(guess2);
-				
-		}while (player1.getPoint()!=5 || player2.getPoint()!=5);
+		Scanner keyboard = new Scanner(System.in);
+        Player one = new Player("Jabba");
+        Player two = new Player("Han Solo");
+        boolean test = false, test2 = false;
+        do{
+            System.out.println("Player n1 guess. Heads or tails?");
+            test = one.Go(keyboard.nextLine());
+            System.out.println("Player n2 guess. Heads or tails?");
+            test2 = two.Go(keyboard.nextLine());
+            System.out.println(one+"\n"+two);
+            if(test)
+                System.out.println("The winner is "+one.getName());
+            if(test2)
+                System.out.println("The winner is "+two.getName());
+        }while(!(test || test2));
 	}
 
 }

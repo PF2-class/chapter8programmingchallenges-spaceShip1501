@@ -4,15 +4,22 @@ import java.util.Random;
 
 public class Dice {
 
-
-
-		Random radd= new Random();
+	private int value;
+		
 
 	public Dice() {
-
-	}public int Roll() {
+		Roll();
 		
-		return radd.nextInt(6)+1;
+	}public Dice (Dice b){
+		Roll();
+		
+	}
+	public void Roll() {
+		Random radd= new Random();
+		value = radd.nextInt(6)+1;
+	}
+	public int getValue() {
+		return value;
 	}
 
 	}
